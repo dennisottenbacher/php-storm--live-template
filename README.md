@@ -1,14 +1,14 @@
-## Path
+# Path
 
 ~/Library/Preferences/PhpStorm20xx.x
 
-## Commands
+# Commands
 
-# -db
+## -db
 /* @var $db \Doctrine\DBAL\Connection */
 $db = Shopware()->Container()->get('dbal_connection');
 
-# -crud
+## -crud
 /** @var \Shopware\Bundle\AttributeBundle\Service\CrudService $attributeService */
 $attributeService = Shopware()->Container()->get('shopware_attribute.crud_service');
 
@@ -25,7 +25,7 @@ $modelmanager->generateAttributeModels(
 ]
 );
 
-# -crud--update
+## -crud--update
 $attributeService->update(
 's_articles_attributes',
 'product_label',
