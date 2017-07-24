@@ -4,5 +4,14 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="-crud" value="/** @var \Shopware\Bundle\AttributeBundle\Service\CrudService $attributeService */&#10;$attributeService = Shopware()-&gt;Container()-&gt;get('shopware_attribute.crud_service');" description="CrudService" toReformat="true" toShortenFQNames="true" />
+  <template name="-crud" value="/** @var \Shopware\Bundle\AttributeBundle\Service\CrudService $attributeService */&#10;$attributeService = Shopware()-&gt;Container()-&gt;get('shopware_attribute.crud_service');&#10;&#10;//Update here --crud--update&#10;&#10;$modelmanager = Shopware()-&gt;Container()-&gt;get('models');&#10;/** @var \Doctrine\Common\Cache\Cache $metaDataCache */&#10;$metaDataCache = $modelmanager-&gt;getConfiguration()-&gt;getMetadataCacheImpl();&#10;$metaDataCache-&gt;deleteAll();&#10;&#10;$modelmanager-&gt;generateAttributeModels(&#10;[&#10;'s_articles_attributes',&#10;]&#10;);" description="CrudService" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="-crud--update" value="$attributeService-&gt;update(&#10;'s_articles_attributes',&#10;'product_label',&#10;\Shopware\Bundle\AttributeBundle\Service\TypeMapping::TYPE_STRING,&#10;            [&#10;                'label'            =&gt; 'Produkt Label',&#10;                'displayInBackend' =&gt; true,&#10;                'custom'           =&gt; true,&#10;            ]);" description="CrudService Update" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
