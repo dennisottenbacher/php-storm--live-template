@@ -1,0 +1,8 @@
+<templateSet group="Shopware">
+  <template name="-db" value="/* @var $db \Doctrine\DBAL\Connection */&#10;$db = Shopware()-&gt;Container()-&gt;get('dbal_connection');" description="Holt dir die Datenbank Connection von Shopware" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="-crud" value="/** @var \Shopware\Bundle\AttributeBundle\Service\CrudService $attributeService */&#10;$attributeService = Shopware()-&gt;Container()-&gt;get('shopware_attribute.crud_service');" description="CrudService" toReformat="true" toShortenFQNames="true" />
+</templateSet>
